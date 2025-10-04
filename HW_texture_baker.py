@@ -68,6 +68,7 @@ class TeamColorizerApp:
         self.preset_target = tk.StringVar()
         self.badge_placement = None
         self.badge_rotation = 0
+        self.badge_alpha = 255
         self.mode = tk.StringVar()
         self.primary_team_color = (255, 0, 0)  # Default red for primary team regions
         self.secondary_team_color = (0, 0, 255)  # Default blue for secondary team regions
@@ -982,6 +983,7 @@ class TeamColorizerApp:
                         "- Left-click and drag to move the badge.\n"
                         "- Right-click and drag a corner to resize (keeps aspect ratio).\n"
                         "- Use the rotation slider to rotate the badge.\n"
+                        "- Use the alpha slider to adjust badge transparency.\n"
                         "- Click 'Apply' to confirm or 'Cancel' to discard.")
         instr_text.insert(tk.END, instructions)
         instr_text.config(state=tk.DISABLED, height=3)
@@ -992,6 +994,14 @@ class TeamColorizerApp:
         ttk.Label(rotation_frame, text="Rotation:", style='Body.TLabel').pack(side=tk.LEFT, padx=(0,10))
         self.rotation_scale = tk.Scale(rotation_frame, from_=0, to=360, orient=tk.HORIZONTAL, command=self.update_rotation)
         self.rotation_scale.pack(side=tk.LEFT, fill=tk.X, expand=True)
+
+        # Alpha control
+        alpha_frame = ttk.Frame(self.badge_window, style='Card.TFrame')
+        alpha_frame.pack(fill=tk.X, pady=(2, 4), padx=10)
+        ttk.Label(alpha_frame, text="Alpha:", style='Body.TLabel').pack(side=tk.LEFT, padx=(0,10))
+        self.alpha_scale = tk.Scale(alpha_frame, from_=0, to=255, orient=tk.HORIZONTAL, command=self.update_alpha)
+        self.alpha_scale.pack(side=tk.LEFT, fill=tk.X, expand=True)
+        self.alpha_scale.set(self.badge_alpha)
 
         # Buttons at the bottom
         btn_frame = ttk.Frame(self.badge_window, style='Card.TFrame')
@@ -1017,12 +1027,13 @@ class TeamColorizerApp:
         self.badge_placement[0] = x
         self.badge_placement[1] = y
         
-        rotated_badge = self.badge_image.rotate(self.badge_rotation, expand=True)
+        rotated_badge = self.badge_image.rotate(self.badge_rotation, expand=False)
         badge_resized = rotated_badge.resize(
             (int(w), int(h)),
             Image.Resampling.LANCZOS
         )
-        self.badge_tk = ImageTk.PhotoImage(badge_resized)
+        badge_with_alpha = self.apply_alpha_to_badge(badge_resized)
+        self.badge_tk = ImageTk.PhotoImage(badge_with_alpha)
         self.badge_canvas.delete("badge")
         self.badge_canvas.create_image(x, y, anchor=tk.NW, image=self.badge_tk, tags="badge")
         self.badge_canvas.delete("handles")
@@ -1127,6 +1138,23 @@ class TeamColorizerApp:
         self.badge_rotation = int(value)
         self.update_badge_preview()
 
+    def update_alpha(self, value):
+        self.badge_alpha = int(value)
+        self.update_badge_preview()
+
+    def apply_alpha_to_badge(self, image):
+        if self.badge_alpha >= 255:
+            return image
+        badge_copy = image.copy()
+        pixels = badge_copy.load()
+        alpha_factor = self.badge_alpha / 255.0
+        for y in range(badge_copy.height):
+            for x in range(badge_copy.width):
+                r, g, b, a = pixels[x, y]
+                new_a = int(a * alpha_factor)
+                pixels[x, y] = (r, g, b, new_a)
+        return badge_copy
+
     def apply_badge(self):
         if not self.output_image or not self.badge_image:
             return
@@ -1138,8 +1166,10 @@ class TeamColorizerApp:
         if orig_w < 10 or orig_h < 10:
             self.badge_window.destroy()
             return
-        badge_resized = self.badge_image.resize((orig_w, orig_h), Image.Resampling.LANCZOS)
-        self.output_image.paste(badge_resized, (orig_x, orig_y), badge_resized if badge_resized.mode == 'RGBA' else None)
+        rotated_badge = self.badge_image.rotate(self.badge_rotation, expand=False)
+        badge_resized = rotated_badge.resize((orig_w, orig_h), Image.Resampling.LANCZOS)
+        badge_final = self.apply_alpha_to_badge(badge_resized)
+        self.output_image.paste(badge_final, (orig_x, orig_y), badge_final if badge_final.mode == 'RGBA' else None)
         self.update_preview("Result", self.output_image)
         self.badge_window.destroy()
 
