@@ -1,0 +1,197 @@
+[
+  {
+    "faction": "Hiigara",
+    "primary": "#9e9e9e",
+    "secondary": "#cdcdcd"
+  },
+  {
+    "faction": "Kushan",
+    "primary": "#b8b8b8",
+    "secondary": "#b4b4b4"
+  },
+  {
+    "faction": "Taiidan Empire",
+    "primary": "#FDD106",
+    "secondary": "#ED2024"
+  },
+  {
+    "faction": "Turanic Raiders",
+    "primary": "#c2c2c2",
+    "secondary": "#a3a3a3"
+  },
+  {
+    "faction": "Kiith Manaan",
+    "primary": "#bfbfbf",
+    "secondary": "#a3a3a3"
+  },
+  {
+    "faction": "Kiith Naabal",
+    "primary": "#1e263e",
+    "secondary": "#1e253d"
+  },
+  {
+    "faction": "Kiith Somtaaw",
+    "primary": "#2b9ce4",
+    "secondary": "#adadad"
+  },
+  {
+    "faction": "Kiith S'jet",
+    "primary": "#b4b4b4",
+    "secondary": "#9b9b9b"
+  },
+  {
+    "faction": "Kiith Paktu",
+    "primary": "#c2c2c2",
+    "secondary": "#bcbcbc"
+  },
+  {
+    "faction": "Kiith Kaalel",
+    "primary": "#1c273d",
+    "secondary": "#20253b"
+  },
+  {
+    "faction": "Bentusi Unbound Traders",
+    "primary": "#2d9ce3",
+    "secondary": "#2c9be3"
+  },
+  {
+    "faction": "Vaygr",
+    "primary": "#a4a4a4",
+    "secondary": "#b8b8b8"
+  },
+  {
+    "faction": "Progenitors",
+    "primary": "#1f263f",
+    "secondary": "#23283e"
+  },
+  {
+    "faction": "Kadeshi",
+    "primary": "#e5d053",
+    "secondary": "#2c9be3"
+  },
+  {
+    "faction": "Hiigaran Navy",
+    "primary": "#4f9e8b",
+    "secondary": "#b8b8b8"
+  },
+  {
+    "faction": "Civilian Commerce Relay",
+    "primary": "#a9a9a9",
+    "secondary": "#a7a7a7"
+  },
+  {
+    "faction": "Taiidani Exports & Logistics",
+    "primary": "#4ce39c",
+    "secondary": "#1d263d"
+  },
+  {
+    "faction": "Kiith S'jet Carrier",
+    "primary": "#2c9be3",
+    "secondary": "#2c9be3"
+  },
+  {
+    "faction": "Kiith Naabal Shipyard",
+    "primary": "#cacaca",
+    "secondary": "#c4c4c4"
+  },
+  {
+    "faction": "Nabaal",
+    "primary": "#b5b5b5",
+    "secondary": "#939393"
+  },
+  {
+    "faction": "Kiith Somar",
+    "primary": "#2b9ce4",
+    "secondary": "#2c9be3"
+  },
+  {
+    "faction": "Kiith Raan",
+    "primary": "#e5924a",
+    "secondary": "#acacac"
+  },
+  {
+    "faction": "Kiith Gahalem",
+    "primary": "#5f80a7",
+    "secondary": "#c7c8c8"
+  },
+  {
+    "faction": "Kiith Manaan Traders",
+    "primary": "#92bf5b",
+    "secondary": "#c1c1c1"
+  },
+  {
+    "faction": "Kiith Kushan Loyalists",
+    "primary": "#4680bb",
+    "secondary": "#31a49f"
+  },
+  {
+    "faction": "Scavengers",
+    "primary": "#2c9be3",
+    "secondary": "#2c9be3"
+  },
+  {
+    "faction": "Salvage Yards",
+    "primary": "#bcbcbc",
+    "secondary": "#b8b8b8"
+  },
+  {
+    "faction": "Kalan Raiders",
+    "primary": "#f1c87b",
+    "secondary": "#563830"
+  },
+  {
+    "faction": "Mercantile Guild",
+    "primary": "#2b9ce4",
+    "secondary": "#2c9be3"
+  },
+  {
+    "faction": "Independent Traders",
+    "primary": "#a3a3a3",
+    "secondary": "#c2c2c2"
+  },
+  {
+    "faction": "Kiith Ler",
+    "primary": "#c0c0c0",
+    "secondary": "#adadad"
+  },
+  {
+    "faction": "Kiith Xaan",
+    "primary": "#2c9be3",
+    "secondary": "#e3ce53"
+  },
+  {
+    "faction": "Kiith Yaan",
+    "primary": "#d58871",
+    "secondary": "#e42d2d"
+  },
+  {
+    "faction": "Kiith Zaan",
+    "primary": "#c13338",
+    "secondary": "#b8b8b8"
+  },
+  {
+    "faction": "Kiith Qala",
+    "primary": "#c15828",
+    "secondary": "#b2b2b2"
+  },
+  {
+    "faction": "Kiith Vor",
+    "primary": "#e3c17e",
+    "secondary": "#21253d"
+  },
+  {
+    "faction": "Neutral",
+    "primary": "#6bc49a",
+    "secondary": "#21273e"
+  },
+  {
+    "faction": "Faction 38",
+    "primary": "#1f1f1f",
+    "secondary": "#1f1f1f"
+  },
+  {
+    "faction": "Faction 39",
+    "primary": "#5dd4d7",
+    "secondary": "#1f273f"
+  }
+]
