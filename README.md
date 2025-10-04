@@ -87,10 +87,6 @@ Output format: PNG (recommended for transparency)
 
 Presets are loaded from `faction_color_presets_named.json`
 
-## Screenshots
-
-(Add screenshots here when available)
-
 ## Contributing
 
 1. Fork the repository
