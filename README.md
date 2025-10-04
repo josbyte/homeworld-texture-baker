@@ -33,7 +33,7 @@ cd homeworld-texture-baker
 
 - Python 3.8+
 - PIL (Pillow)
-- Tkinter (usually included with Python), Linux need to install python3-tk package
+- Tkinter (usually included with Python), Linux need to install python3-tk package on your system (package installer, not pip)
 
 It's better if you create a Python env and install everything with:
 ```bash
